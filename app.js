@@ -1,3 +1,5 @@
+// For Chrome
+
 const history = document.querySelector("#history-app").shadowRoot.querySelector("#history");
 let i = 0;
 
@@ -16,4 +18,14 @@ setInterval(async ()=>{
     await checkbox.click();
     await currentFrb.scrollIntoView();
     i++;
+}, 1);
+
+// For Edge
+setInterval(async()=>{
+    let option = document.querySelector("[role='option']");
+    if(!option) {
+        clearInterval(this);
+        return;
+    }
+    option.querySelector("button").click();
 }, 1);
